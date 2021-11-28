@@ -1,0 +1,16 @@
+.input-container {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  gap: 10px;
+  margin: 20px;
+}
+
+.is-require:after {
+  content: "*";
+  color: red;
+}
+
+.counter-btn{
+  height: 36px;
+}

@@ -1,0 +1,4 @@
+<div [class]="!hideLabel? 'input-container': ''" *ngIf="control">
+  <label *ngIf="!hideLabel" class="is-require">{{label}}</label>
+  <input #input [value]="value" (keydown)="onChange($event)" [style]="styleClass">
+</div>

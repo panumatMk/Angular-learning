@@ -1,0 +1,9 @@
+<div class="input-container" *ngIf="control">
+  <label class="is-require">{{label}}</label>
+  <div style="display:grid;grid-template-columns: 30px auto 30px;">
+    <button class="counter-btn" (click)="input.decrease()"> -</button>
+    <app-number-input #input [hideLabel]="true" [styleClass]="{width: '200px',height: '30px', 'text-align': 'right'}"
+                      [formControl]="numberInput"></app-number-input>
+    <button class="counter-btn" (click)="input.increase()"> +</button>
+  </div>
+</div>
