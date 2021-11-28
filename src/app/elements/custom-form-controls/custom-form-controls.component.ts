@@ -21,9 +21,9 @@ export class CustomFormControlsComponent implements OnInit {
   ngOnInit(): void {
     this.name = new FormControl('test', [Validators.required, Validators.maxLength(5)]);
 
-    this.numberInput = new FormControl();
+    this.numberInput = new FormControl(7654321);
 
-    this.numberCounter = new FormControl();
+    this.numberCounter = new FormControl(1234567890);
   }
 
 }

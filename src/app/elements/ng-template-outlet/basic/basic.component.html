@@ -1,4 +1,4 @@
-<div class="container-1" >
+<div class="container-1">
   <span class="label-1" (mouseover)="showToolTip=true" (mouseout)="showToolTip=false">ng-container</span>
   <ng-container
     [ngTemplateOutlet]="content"
@@ -6,12 +6,9 @@
   >
   </ng-container>
 
-  <pre *ngIf="showToolTip">
-    &lt;ng-container [ngTemplateOutlet]="content"
-                  [ngTemplateOutletContext]="&lcub; $implicit : 'someText' &rcub;&gt;
-
-    &lt;/ng-container&gt;
-  </pre>
+  <pre class="pre-1" *ngIf="showToolTip">&lt;ng-container [ngTemplateOutlet]="content"
+ [ngTemplateOutletContext]="&lcub; $implicit : 'someText' &rcub;&gt;
+&lt;/ng-container&gt;</pre>
 
 </div>
 

@@ -8,6 +8,7 @@
 
 .container-1{
   position: relative;
+  cursor: pointer;
 }
 .container-2{
   position: relative;
@@ -45,4 +46,13 @@
   background: #516fa7;
   color: white;
   padding: 0px 15px;
+}
+
+.pre-1 {
+  position: absolute;
+  top: -90px;
+  left: 60px;
+  background: whitesmoke;
+  border: 1px black solid;
+  padding: 5px;
 }

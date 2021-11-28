@@ -1,7 +1,7 @@
 <h1>Custom FormControl</h1>
-<app-input label="name" [formControl]="name"></app-input>
-value = {{ name?.value}}
-<app-number-input label="number" [formControl]="numberInput"></app-number-input>
-value = {{ numberInput?.value}}
-<app-counter-number-input label="number" [formControl]="numberCounter"></app-counter-number-input>
-value = {{ numberCounter?.value}}
+<app-input label="Input Validator" [formControl]="name"></app-input>
+Value = <span class="show-value">{{ name?.value}}</span>
+<app-number-input label="Number" [formControl]="numberInput"></app-number-input>
+Value = <span class="show-value">{{ numberInput?.value}}</span>
+<app-counter-number-input label="Counter Number Input" [formControl]="numberCounter"></app-counter-number-input>
+Value = <span class="show-value">{{ numberCounter?.value}}</span>

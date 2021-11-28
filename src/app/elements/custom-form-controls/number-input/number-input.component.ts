@@ -40,8 +40,11 @@ export class NumberInputComponent implements ControlValueAccessor, AfterContentI
     const ngControl: NgControl | null = this.injector.get(NgControl, null);
     if (ngControl) {
       this.control = ngControl.control as FormControl;
+      if(this.control.value){
+        this.updateValueStr();
+      }
     } else {
-      // Component is missing form control binding
+      console.error('ใส่ ngControl ด้วยนะจร๊ะ');
     }
   }
 
@@ -105,11 +108,16 @@ export class NumberInputComponent implements ControlValueAccessor, AfterContentI
       el.selectionEnd = positionStart;
       this.updatePositionIfCurrentIndexIsComma(el);
     } else {
-      if (event === 'Blackspace') {
+      if (event === BACKSPACE) {
         el.selectionStart = positionStart ? positionStart - 1 : 0;
         el.selectionEnd = el.selectionStart;
         this.updatePositionIfCurrentIndexIsComma(el);
       }
+      // else{
+      //   el.selectionStart = positionStart ? positionStart + 1 : 0;
+      //   el.selectionEnd = el.selectionStart;
+      //   this.updatePositionIfCurrentIndexIsComma(el);
+      // }
     }
   }
 
@@ -163,27 +171,33 @@ export class NumberInputComponent implements ControlValueAccessor, AfterContentI
   increase() {
     let value = this.control.value;
     if (value === null) {
-      this.input.nativeElement.value = '1';
+      this.value = '1';
       this.change(1);
       return;
     }
     value += 1;
     this.change(value);
     const newValue = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    this.input.nativeElement.value = newValue;
+    this.value = newValue;
   }
 
   decrease() {
     let value = this.control.value;
     if (value === null || value === 1 || value === 0) {
-      this.input.nativeElement.value = '0';
+      this.value = '0';
       this.change(0);
       return;
     }
     value -= 1;
     this.change(value);
     const newValue = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    this.input.nativeElement.value = newValue;
+    this.value = newValue;
+  }
+
+  updateValueStr(): void {
+    let value = this.control.value;
+    const strValue = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    this.value = strValue;
   }
 
 }
