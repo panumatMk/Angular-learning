@@ -26,16 +26,4 @@ export class CustomFormControlsComponent implements OnInit {
     this.numberCounter = new FormControl();
   }
 
-  showName() {
-    console.log(this.name.value);
-  }
-
-  showNumber() {
-    console.log(this.numberInput.value);
-  }
-
-  showCounterNumber() {
-    console.log(this.numberCounter.value);
-  }
-
 }

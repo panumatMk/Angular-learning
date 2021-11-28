@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {CustomFormControlsComponent} from './custom-form-controls.component';
 import {InputComponent} from './input/input.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {FiledErrorComponent} from './filed-error/filed-error.component';
+import {FieldErrorComponent} from './filed-error/field-error.component';
 import {NumberInputComponent} from "./number-input/number-input.component";
 import {CounterNumberInputComponent} from "./couter-number-input/counter-number-input.component";
 
@@ -13,7 +13,7 @@ import {CounterNumberInputComponent} from "./couter-number-input/counter-number-
     CustomFormControlsComponent,
     InputComponent,
     NumberInputComponent,
-    FiledErrorComponent,
+    FieldErrorComponent,
     CounterNumberInputComponent
   ],
   exports: [

@@ -1,8 +1,7 @@
 <h1>Custom FormControl</h1>
 <app-input label="name" [formControl]="name"></app-input>
-<button (click)="showName()">show name</button>
+value = {{ name?.value}}
 <app-number-input label="number" [formControl]="numberInput"></app-number-input>
-<button (click)="showNumber()">show number</button>
+value = {{ numberInput?.value}}
 <app-counter-number-input label="number" [formControl]="numberCounter"></app-counter-number-input>
-<button (click)="showCounterNumber()">show number</button>
-
+value = {{ numberCounter?.value}}

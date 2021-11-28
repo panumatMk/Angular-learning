@@ -1,5 +1,5 @@
 <div class="input-container" *ngIf="control">
   <label class="is-require">{{label}}</label>
   <input [value]="value" (input)="onChange($event)">
-  <app-filed-error [formFiled]="control"></app-filed-error>
+  <app-field-error [formField]="control"></app-field-error>
 </div>
