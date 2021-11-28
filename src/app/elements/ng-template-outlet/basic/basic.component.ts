@@ -1,0 +1,19 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-basic',
+  templateUrl: './basic.component.html',
+  styleUrls: ['./basic.component.css']
+})
+export class BasicComponent implements OnInit {
+
+  someText = 'Hello Yo!.';
+
+  showToolTip!: boolean;
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}

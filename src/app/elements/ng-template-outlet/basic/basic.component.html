@@ -1,0 +1,30 @@
+<div class="container-1" >
+  <span class="label-1" (mouseover)="showToolTip=true" (mouseout)="showToolTip=false">ng-container</span>
+  <ng-container
+    [ngTemplateOutlet]="content"
+    [ngTemplateOutletContext]="{ $implicit : someText }"
+  >
+  </ng-container>
+
+  <pre *ngIf="showToolTip">
+    &lt;ng-container [ngTemplateOutlet]="content"
+                  [ngTemplateOutletContext]="&lcub; $implicit : 'someText' &rcub;&gt;
+
+    &lt;/ng-container&gt;
+  </pre>
+
+</div>
+
+<ng-template #content let-data>
+  <div class="card">
+    <div class="container-2">
+      <span class="label-2"> ng-template </span>
+      <h4> This text is passed from ngTemplateOutlet.</h4>
+      <div class="container-2">
+        <span class="label-3"> $implicit </span>
+        {{data}}
+      </div>
+    </div>
+
+  </div>
+</ng-template>

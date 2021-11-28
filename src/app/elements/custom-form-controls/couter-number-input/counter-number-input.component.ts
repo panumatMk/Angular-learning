@@ -1,5 +1,6 @@
-import {AfterContentInit, Component, forwardRef, Injector, Input} from '@angular/core';
+import {AfterContentInit, Component, forwardRef, Injector, Input, OnDestroy} from '@angular/core';
 import {AbstractControl, ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, NgControl} from "@angular/forms";
+import {Subscription} from "rxjs";
 
 
 const specialKeys: Array<string> = ['Tab', 'End', 'Home', 'ArrowLeft', 'ArrowRight', 'Del', 'Delete'];
@@ -18,7 +19,7 @@ const BACKSPACE = 'Backspace'
   ]
 })
 
-export class CounterNumberInputComponent implements ControlValueAccessor, AfterContentInit {
+export class CounterNumberInputComponent implements ControlValueAccessor, AfterContentInit, OnDestroy {
   private regex: RegExp = new RegExp(/^(?!0\d)(?:\d+|\d{1,3}(?:,\d{3})+)?$/gm);
 
   @Input() label!: string;
@@ -29,6 +30,7 @@ export class CounterNumberInputComponent implements ControlValueAccessor, AfterC
 
   control!: AbstractControl;
 
+  subscription = new Subscription();
 
   constructor(private injector: Injector) {
     this.numberInput = new FormControl();
@@ -42,11 +44,14 @@ export class CounterNumberInputComponent implements ControlValueAccessor, AfterC
       // Component is missing form control binding
     }
 
-    this.numberInput.valueChanges.subscribe((value) => {
+    this.subscription.add(this.numberInput.valueChanges.subscribe((value) => {
       this.change(value);
-    });
+    }));
   }
 
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 
   registerOnChange(fn: any): void {
     this.change = fn;
