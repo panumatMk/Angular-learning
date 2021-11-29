@@ -1,0 +1,7 @@
+<div *ngFor="let book of books">
+  <ng-container [ngTemplateOutlet]="templateRef"
+                [ngTemplateOutletContext]="{ book: book, color: book.data3}"
+  >
+  </ng-container>
+</div>
+

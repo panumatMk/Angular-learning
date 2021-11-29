@@ -1,0 +1,18 @@
+<app-book>
+  <ng-template let-book="book" let-color="color">
+    <div [style]="{background: color}" class="book">
+      <div>{{book.data1}}</div>
+      <div>{{book.data2}}</div>
+    </div>
+  </ng-template>
+</app-book>
+
+
+<app-book class="book-container">
+  <ng-template let-book="book" let-color="color">
+    <div>
+      <div class="book-sub-1 book-sub-0">{{book.data1}}</div>
+      <div class="book-sub-1" [style]="{background: color}">{{book.data2}}</div>
+    </div>
+  </ng-template>
+</app-book>
