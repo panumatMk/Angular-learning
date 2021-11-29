@@ -15,10 +15,8 @@
   padding: 20px;
 }
 
-.label-1 {
+.label {
   position: absolute;
-  left: 20px;
-  top: -13px;
   font-size: 18px;
   font-style: italic;
   background: #144eb9;
@@ -26,26 +24,31 @@
   padding: 0px 15px;
 }
 
+.label-1 {
+  .label();
+  left: 20px;
+  top: -13px;
+}
+
 .label-2 {
-  position: absolute;
+  .label();
   left: 20px;
   top: 13px;
-  font-size: 18px;
-  font-style: italic;
-  background: #516fa7;
-  color: white;
-  padding: 0px 15px;
+  opacity: 0.8;
 }
 
 .label-3 {
-  position: absolute;
+  .label();
   left: 20px;
   top: -4px;
-  font-size: 18px;
-  font-style: italic;
-  background: #516fa7;
-  color: white;
-  padding: 0px 15px;
+  opacity: 0.8;
+}
+
+.label-4 {
+  .label();
+  left: 170px;
+  top: -4px;
+  opacity: 0.8;
 }
 
 .pre-1 {
